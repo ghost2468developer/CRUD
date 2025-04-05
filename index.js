@@ -21,8 +21,28 @@ app.get('/users', async (req, res) => {
     res.json(users)
 })
 
+// Read one user
 app.get('/users/:id', async (req, res) => {
     const { id } = req.params
     const user = await prisma.user.findUnique({ where: { id: Number(id) } })
     user ? res.json(user) : res.status(404).json({ error: 'User not found' })
+})
+
+// Update a user
+app.put('/users/:id', async (req, res) => {
+    const { id } = req.params
+    const { firstName, lastName, email, age } = req.body
+    try {
+        const updateUser = await prisma.user.update({
+            where: { id: Number(id) },
+            data: { firstName, lastName, email, age }
+        })
+        res.json(updateUser)
+    } catch (e) {
+        res.status(404).json({ error: 'User not found' })
+    }
+})
+
+app.listen(1234, () => {
+    console.log('Server running at http://localhost::1234}')
 })
