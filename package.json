@@ -1,0 +1,25 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghost2468developer/CRUD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghost2468developer/CRUD/issues"
+  },
+  "homepage": "https://github.com/ghost2468developer/CRUD#readme",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "express": "^5.1.0",
+    "prisma": "^6.5.0"
+  }
+}
